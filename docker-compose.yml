@@ -11,7 +11,7 @@ services:
             - ./conf/php/php.ini:/usr/local/etc/php/php.ini
             - ./conf/apache2/default.conf:/etc/apache2/sites-enabled/000-default.conf
             # on transmet les infos de config locales dans le conteneur (ex: ajouter des images)
-            - ./app:/var/www
+            - .:/var/www
 
         networks:
             - local_network
@@ -53,4 +53,4 @@ services:
 networks:
     local_network:
         driver: bridge
-# docker-compose up -d --remove-orphan
+# docker-compose up -d
