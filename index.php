@@ -3,7 +3,7 @@ define("APP_ROOT", ($_SERVER['DOCUMENT_ROOT']));
 
 require_once APP_ROOT . "/app/templates/header.php";
 
-
+$articles = getArticles($pdo, _ITEM_PER_HOME_PAGE_);
 
 
 ?>
