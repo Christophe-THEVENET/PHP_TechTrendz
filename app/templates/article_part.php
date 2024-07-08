@@ -1,4 +1,5 @@
 <?php
+
 if ($article["image"] === null) {
     $imagePath = _ASSETS_IMAGES_FOLDER_ . "default-article.jpg";
 } else {

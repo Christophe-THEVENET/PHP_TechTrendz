@@ -1,7 +1,12 @@
 <?php
 
+require_once __DIR__ . "/app/lib/config.php";
+require_once __DIR__ . "/app/lib/pdo.php";
 
 require_once __DIR__ . "/app/templates/header.php";
+
+$articles = getArticles($pdo);
+
 
 
 

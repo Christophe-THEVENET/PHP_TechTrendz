@@ -1,14 +1,15 @@
 <?php
 
 require_once __DIR__ . "/app/lib/config.php";
+require_once __DIR__ . "/app/lib/pdo.php";
 require_once __DIR__ . "/app/lib/articles.php";
 
 $error = false;
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $article = $articles[$id - 1];
-
+    $article = getArticleById($pdo, $id); 
+    
     require_once __DIR__ . "/app/lib/menu.php";
 
     $mainMenu['actualite.php'] = [
@@ -17,7 +18,6 @@ if (isset($_GET['id'])) {
         'meta_description' => substr($article['content'], 0, 250),
         'exclude' => true
     ];
-    /*   $article = getArticleById($pdo, $id); */
 
     if ($article["image"] === null) {
         $imagePath = _ASSETS_IMAGES_FOLDER_ . "default-article.jpg";
@@ -35,7 +35,6 @@ if (isset($_GET['id'])) {
 require_once __DIR__ . "/app/templates/header.php";
 
 ?>
-
 
 <?php if (!$error) { ?>
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
