@@ -1,11 +1,9 @@
 <?php
 define("APP_ROOT", ($_SERVER['DOCUMENT_ROOT']));
 
-require_once __DIR__ . "/app/lib/config.php";
 require_once APP_ROOT . "/app/templates/header.php";
 
 ?>
-<main>
     <!-- ************************************ BANNIERE ****************************************** -->
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
@@ -20,13 +18,6 @@ require_once APP_ROOT . "/app/templates/header.php";
         </div>
     </div>
     <?php 
-
-    $articles = [
-        ['id' => 1,'title' => 'toto', 'image' => null],
-        ['id' => 2, 'title' => 'tata', 'image' => null],
-        ['id' => 3, 'title' => 'titi', 'image' => null]
-    ]; 
-    
     ?>
     <!-- ************************************ 3 DERNIERS ARTICLES ****************************************** -->
 
@@ -34,10 +25,8 @@ require_once APP_ROOT . "/app/templates/header.php";
         <?php foreach ($articles as $key => $article) { ?>
             <?php require __DIR__ . "/app/templates/article_part.php"; ?>
         <?php } ?>
-
     </div>
 
-</main>
 
 
 
