@@ -3,6 +3,9 @@ define("APP_ROOT", ($_SERVER['DOCUMENT_ROOT']));
 
 require_once APP_ROOT . "/app/templates/header.php";
 
+
+
+
 ?>
     <!-- ************************************ BANNIERE ****************************************** -->
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">

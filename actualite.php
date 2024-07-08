@@ -53,3 +53,4 @@ require_once __DIR__ . "/app/templates/header.php";
 
 
 <?php require_once __DIR__ . "/app/templates/footer.php"; ?>
+
