@@ -9,6 +9,15 @@ function getArticleById(PDO $pdo, int $id): array|bool
     return $query->fetch(PDO::FETCH_ASSOC);
 }
 
+function getArticleImagePath(string|null $image): string
+{
+    if ($image === null) {
+        return _ASSETS_IMAGES_FOLDER_ . "default-article.jpg";
+    } else {
+        return _ARTICLES_IMAGES_FOLDER_ . $image;
+    }
+}
+
 function getArticles(PDO $pdo, int $limit = null, int $page = null): array|bool
 {
     $sql = "SELECT * FROM articles ORDER BY id DESC";
