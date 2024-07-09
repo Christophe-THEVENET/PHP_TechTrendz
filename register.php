@@ -1,11 +1,8 @@
 <?php
-require_once __DIR__ . "/app/lib/config.php";
+require_once __DIR__ . "/app/templates/header.php";
 require_once __DIR__ . "/app/lib/pdo.php";
 require_once __DIR__ . "/app/lib/user.php";
 require_once __DIR__ . "/app/lib/menu.php";
-require_once __DIR__ . "/app/templates/header.php";
-
-
 
 $errors = [];
 
@@ -55,11 +52,9 @@ if (isset($_POST["registerUser"])) {
     $errors[] = "Une erreure est survenue: veuillez réesayer.";
 }
 
-
 ?>
 
 <h1>Inscription</h1>
-
 
 <form method="post">
     <div class="mb-3">

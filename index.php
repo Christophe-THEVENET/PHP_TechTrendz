@@ -1,10 +1,7 @@
 <?php
 
-require_once __DIR__ . "/app/lib/config.php";
-require_once __DIR__ . "/app/lib/pdo.php";
-
-
 require_once __DIR__ . "/app/templates/header.php";
+require_once __DIR__ . "/app/lib/pdo.php";
 
 $articles = getArticles($pdo, _ITEM_PER_HOME_PAGE_);
 
