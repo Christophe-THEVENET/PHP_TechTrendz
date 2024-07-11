@@ -17,7 +17,9 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install pdo pdo_mysql zip opcache intl
 
- 
+# Activer les modules Apache nécessaires
+RUN a2enmod rewrite
+
 # Définir le répertoire de travail
 WORKDIR /var/www
 
