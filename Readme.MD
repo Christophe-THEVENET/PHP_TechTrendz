@@ -19,9 +19,9 @@ Application de publication d'articles par catégorie. L'administration du site e
 ## Installation
 
 
-`git clone https://github.com/Christophe-THEVENET/lessaveursdesavoie.fr.nf.git`
+`git clone https://github.com/Christophe-THEVENET/PHP_TechTrendz`
 
-`cd lessaveursdesavoie.fr.nf/`
+`cd PHP_TechTrendz/`
 
 `docker-compose up -d`
 
