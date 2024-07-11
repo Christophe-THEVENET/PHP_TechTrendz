@@ -19,7 +19,7 @@ Application de publication d'articles par catégorie. L'administration du site e
 ## Installation
 
 
-`git clone https://github.com/Christophe-THEVENET/PHP_TechTrendz`
+`git clone https://github.com/Christophe-THEVENET/PHP_TechTrendz.git`
 
 `cd PHP_TechTrendz/`
 
@@ -34,8 +34,8 @@ Pour-MariaDB
 $$
 
 ```python
-MYSQL_ROOT_PASSWORD="xxxxx"
-MYSQL_DATABASE="xxxxxx"
+MYSQL_ROOT_PASSWORD="root"
+MYSQL_DATABASE="techtrendz_db"
 MYSQL_USER="xxxxxx"
 MYSQL_PASSWORD="xxxxxxx"
 ```
@@ -45,7 +45,7 @@ $$
 
 ```python
 PMA_ARBITRARY=1
-PMA_HOST="xxxx"
+PMA_HOST="db"
 PMA_USER="xxxxx"
 PMA_PASSWORD="xxxxxx"
 ```
