@@ -157,3 +157,8 @@ header .log-block {
         margin: 0.2rem;
     }
 }
+
+.card-category {
+    color: rgba(102, 130, 181, 0.769);
+    font-size: 12px;
+}

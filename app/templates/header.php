@@ -4,6 +4,7 @@ require_once __DIR__ . "./../lib/menu.php";
 require_once __DIR__ . "./../lib/session.php";
 require_once __DIR__ . "./../lib/config.php";
 require_once __DIR__ . "./../lib/articles.php";
+require_once __DIR__ . "./../lib/category.php";
 
 
 // info meta dynamique par page

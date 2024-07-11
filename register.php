@@ -47,7 +47,7 @@ if (isset($_POST["registerUser"])) {
     } catch (Exception $error) {
         $errors[] = "Impossible de s'enregistrer" . $error->getMessage();
     }
-} 
+}
 
 ?>
 
@@ -84,7 +84,6 @@ if (isset($_POST["registerUser"])) {
         </select>
     </div>
     <input type="submit" value="Inscription" name="registerUser" class="btn btn-primary">
-
 </form>
 
 <?php require_once __DIR__ . "/app/templates/footer.php"; ?>

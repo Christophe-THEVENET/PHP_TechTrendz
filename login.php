@@ -10,13 +10,12 @@ if (isset($_POST["loginUser"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-
     $user = verifyUserLoginPassword($pdo, $email, $password);
 
     if ($user) {
         session_regenerate_id(true); // sécurité en cas de vol de cookie a chaque connexion l'id est regénéré.
         $_SESSION["user"] = $user;
-       
+
         if ($user["role"] === "user") {
             header("location: index.php");
         } elseif ($user["role"] === "admin") {
@@ -26,7 +25,6 @@ if (isset($_POST["loginUser"])) {
         $errors[] = "Email ou mot de passe incorrect";
     }
 }
-
 ?>
 
 <h1>Connexion</h1>
@@ -46,9 +44,7 @@ if (isset($_POST["loginUser"])) {
         <label class="form-label" for="password">Mot de passe</label>
         <input type="password" name="password" id="password" class="form-control" required>
     </div>
-
     <input type="submit" value="Connexion" name="loginUser" class="btn btn-primary">
-
 </form>
 
 <?php require_once __DIR__ . "/app/templates/footer.php"; ?>

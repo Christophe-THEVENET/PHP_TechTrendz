@@ -20,7 +20,7 @@ function getArticleImagePath(string|null $image): string
 
 function getArticles(PDO $pdo, int $limit = null, int $page = null): array|bool
 {
-    $sql = "SELECT * FROM articles ORDER BY id DESC";
+    $sql = "SELECT * FROM articles JOIN categories ON articles.category_id = categories.id ORDER BY articles.id DESC";
 
     if ($limit && !$page) {
         $sql .= " LIMIT  :limit";
@@ -86,4 +86,32 @@ function deleteArticle(PDO $pdo, int $id): bool
     } else {
         return false;
     }
+}
+
+function getArticlesByCategory(PDO $pdo, $categoryId, int $limit = null, int $page = null): array|bool
+{
+    $sql = "SELECT * FROM articles JOIN categories ON articles.category_id = categories.id WHERE categories.id = :categories_id ORDER BY articles.id DESC";
+
+    if ($limit && !$page) {
+        $sql .= " LIMIT  :limit";
+    }
+    if ($limit && $page) {
+        $sql .= " LIMIT :offest, :limit";
+    }
+
+    $query = $pdo->prepare($sql);
+
+    if ($limit) {
+        $query->bindValue(":limit", $limit, PDO::PARAM_INT);
+    }
+    if ($page) {
+        $offset = ($page - 1) * $limit;
+        $query->bindValue(":offest", $offset, PDO::PARAM_INT);
+    }
+
+    $query->bindValue(":categories_id", $categoryId, PDO::PARAM_INT); 
+
+    $query->execute();
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
 }

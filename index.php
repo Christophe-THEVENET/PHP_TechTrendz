@@ -20,17 +20,12 @@ $articles = getArticles($pdo, _ITEM_PER_HOME_PAGE_);
         </div>
     </div>
 </div>
-<?php
-?>
 <!-- ************************************ 3 DERNIERS ARTICLES ****************************************** -->
-
 <div class="row text-center">
     <?php foreach ($articles as $key => $article) { ?>
         <?php require __DIR__ . "/app/templates/article_part.php"; ?>
     <?php } ?>
 </div>
-
-
 
 <?php
 require_once __DIR__ . "/app/templates/footer.php";
