@@ -1,7 +1,5 @@
 # Techtrendz   
-
 Révision des bases de PHP sans POO et sans MVC.
-
 Application de publication d'articles par catégorie. L'administration du site est gérée par un back-office stylisée avec bootstrap.
 
 - gestion des utilisateurs (login/register/logout)
@@ -10,12 +8,10 @@ Application de publication d'articles par catégorie. L'administration du site e
 - téléchargement d'images
 - backoffice sécurisé pour le crud des articles
 
-
 ## Prérequis
 
-* docker engine;
-
-
+* docker engine
+  
 ## Installation
 
 
@@ -59,13 +55,17 @@ docker-compose up -d
 ```
 ## Utilisation
 
-url de l'application:
-http://localhost:8080/
 
 url de phpMyAdmin:
-http://localhost:8899/
+<a href="http://localhost:8899/" target="_blank">http://localhost:8899/</a>
 
-- importer la base de donnée (fichier bdd.sql) fourni dans 'appli.
+
+
+- importer a l'aide de phpMyAdmin la base de donnée (fichier techtrendz_db.sql) fourni dans 'appli.
+
+url de l'application:
+<a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a>
+
 
 ## Ajouter un administrateur
 
