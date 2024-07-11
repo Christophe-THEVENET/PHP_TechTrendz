@@ -19,15 +19,16 @@ Application de publication d'articles par catégorie. L'administration du site e
 ## Installation
 
 
-`git clone https://github.com/Christophe-THEVENET/PHP_TechTrendz.git`
+```markdown
+git clone https://github.com/Christophe-THEVENET/PHP_TechTrendz.git
+```
 
-`cd PHP_TechTrendz/`
+```markdown
+cd PHP_TechTrendz/
+```
 
-`docker-compose up -d`
-
-- créer un fichier .env a la racine de l'appli
-- dans le fichier .env ajouter les variables de connexion avec vos identifiants
-
+#### Créer un fichier .env a la racine de l'appli
+- dans le fichier .env ajouter vos identifiants de connexion a la place de xxxxxxxxx
 
 $$
 Pour-MariaDB
@@ -49,6 +50,11 @@ PMA_HOST="db"
 PMA_USER="xxxxx"
 PMA_PASSWORD="xxxxxx"
 ```
+
+#### Créer les conteneurs docker
+
+
+`docker-compose up -d`
 ## Utilisation
 
 url de l'application:
