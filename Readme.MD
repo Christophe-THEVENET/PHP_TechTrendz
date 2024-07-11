@@ -55,13 +55,14 @@ PMA_PASSWORD="xxxxxx"
 
 
 url de phpMyAdmin:
-[http://localhost:8899/](http://localhost:8899/ "Optional Title"){:target="_blank"}
+<a href="http://localhost:8899/" target="_blank">http://localhost:8899/</a>
 
 
-- importer la base de donnée (fichier techtrendz_db.sql) fourni dans 'appli.
+
+- importer a l'aide de phpMyAdmin la base de donnée (fichier techtrendz_db.sql) fourni dans 'appli.
 
 url de l'application:
-[http://localhost:8080/](http://localhost:8080/ "Optional Title"){:target="_blank"}
+<a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a>
 
 
 ## Ajouter un administrateur
