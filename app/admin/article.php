@@ -1,17 +1,17 @@
 <?php
 require_once __DIR__ . "/../lib/config.php";
 require_once __DIR__ . "/../lib/session.php";
-adminOnly();
-
 require_once __DIR__ . "/../lib/pdo.php";
 require_once __DIR__ . "/../lib/tools.php";
 require_once __DIR__ . "/../lib/articles.php";
 require_once __DIR__ . "/../lib/category.php";
 require_once __DIR__ . "/templates/header.php";
 
+adminOnly();
 
 $errors = [];
 $messages = [];
+// article vide pour pouvoir afficher ajouter un article
 $article = [
     'title' => '',
     'content' => '',
@@ -20,8 +20,9 @@ $article = [
 
 $categories = getCategories($pdo);
 
+//requête pour récupérer les données de l'article en cas de modification
 if (isset($_GET['id'])) {
-    //requête pour récupérer les données de l'article en cas de modification
+
     $article = getArticleById($pdo, $_GET['id']);
     if ($article === false) {
         $errors[] = "L'article n\'existe pas";
@@ -42,14 +43,12 @@ if (isset($_POST['saveArticle'])) {
         if ($checkImage !== false) {
             $fileName = slugify(basename($_FILES["file"]["name"]));
             $fileName = uniqid() . '-' . $fileName;
-
-            /* On déplace le fichier uploadé dans notre dossier upload, dirname(__DIR__) 
-                permet de cibler le dossier parent car on se trouve dans admin
-            */
+            // On déplace le fichier uploadé dans notre dossier upload, dirname(__DIR__) 
+            //  permet de cibler le dossier parent car on se trouve dans admin
             if (move_uploaded_file($_FILES["file"]["tmp_name"], dirname(dirname(__DIR__)) . _ARTICLES_IMAGES_FOLDER_ . $fileName)) {
                 if (isset($_POST['image'])) {
                     // On supprime l'ancienne image si on a posté une nouvelle
-                    unlink(dirname(__DIR__) . _ARTICLES_IMAGES_FOLDER_ . $_POST['image']);
+                    unlink(dirname(dirname(__DIR__)) . _ARTICLES_IMAGES_FOLDER_ . $_POST['image']);
                 }
             } else {
                 $errors[] = 'Le fichier n\'a pas été uploadé';
@@ -62,7 +61,7 @@ if (isset($_POST['saveArticle'])) {
         if (isset($_GET['id'])) {
             if (isset($_POST['delete_image'])) {
                 // Si on a coché la case de suppression d'image, on supprime l'image
-                unlink(dirname(__DIR__) . _ARTICLES_IMAGES_FOLDER_ . $_POST['image']);
+                unlink(dirname(dirname(__DIR__)) . _ARTICLES_IMAGES_FOLDER_ . $_POST['image']);
             } else {
                 $fileName = $_POST['image'];
             }
@@ -91,7 +90,7 @@ if (isset($_POST['saveArticle'])) {
 
         if ($res) {
             $messages[] = "L'article a bien été sauvegardé";
-            //On vide le tableau article pour avoir les champs de formulaire vides
+            //si ajout article on vide le tableau article pour avoir les champs de formulaire vides
             if (!isset($_GET["id"])) {
                 $article = [
                     'title' => '',
@@ -113,11 +112,13 @@ if (isset($_POST['saveArticle'])) {
         <?= $message; ?>
     </div>
 <?php } ?>
+
 <?php foreach ($errors as $error) { ?>
     <div class="alert alert-danger" role="alert">
         <?= $error; ?>
     </div>
 <?php } ?>
+
 <?php if ($article !== false) { ?>
     <form method="POST" enctype="multipart/form-data">
         <div class="mb-3">
@@ -143,7 +144,6 @@ if (isset($_POST['saveArticle'])) {
                 <label for="delete_image">Supprimer l'image</label>
                 <input type="checkbox" name="delete_image" id="delete_image">
                 <input type="hidden" name="image" value="<?= $article['image']; ?>">
-
             </p>
         <?php } ?>
         <p>
@@ -153,9 +153,7 @@ if (isset($_POST['saveArticle'])) {
         <input type="submit" name="saveArticle" class="btn btn-primary" value="Enregistrer">
 
     </form>
-
 <?php } ?>
-
 
 
 <?php require_once __DIR__ . "/templates/footer.php"; ?>

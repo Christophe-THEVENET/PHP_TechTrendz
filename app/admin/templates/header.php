@@ -4,9 +4,7 @@ require_once __DIR__ . "/../../lib/config.php";
 require_once __DIR__ . "/../../lib/session.php";
 
 adminOnly();
-
 $currentPage = basename($_SERVER['SCRIPT_NAME']); 
-
 ?>
 
 <!DOCTYPE html>
