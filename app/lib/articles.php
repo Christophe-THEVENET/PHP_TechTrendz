@@ -1,6 +1,5 @@
 <?php
 
-
 function getArticleById(PDO $pdo, int $id): array|bool
 {
     $query = $pdo->prepare("SELECT * FROM articles WHERE id = :id");
@@ -90,7 +89,7 @@ function deleteArticle(PDO $pdo, int $id): bool
 
 function getArticlesByCategory(PDO $pdo, $categoryId, int $limit = null, int $page = null): array|bool
 {
-    $sql = "SELECT * FROM articles JOIN categories ON articles.category_id = categories.id WHERE categories.id = :categories_id ORDER BY articles.id DESC";
+    $sql = "SELECT articles.*, categories.name AS category_name FROM articles JOIN categories ON articles.category_id = categories.id WHERE categories.id = :categories_id ORDER BY articles.id DESC";
 
     if ($limit && !$page) {
         $sql .= " LIMIT  :limit";
