@@ -5,8 +5,7 @@ require_once __DIR__ . "/../../lib/session.php";
 
 adminOnly();
 
-$currentPage = basename($_SERVER['SCRIPT_NAME']); // index.php
-
+$currentPage = basename($_SERVER['SCRIPT_NAME']); 
 
 ?>
 

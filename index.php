@@ -4,9 +4,7 @@ require_once __DIR__ . "/app/templates/header.php";
 require_once __DIR__ . "/app/lib/pdo.php";
 
 $articles = getArticles($pdo, _ITEM_PER_HOME_PAGE_);
-
 ?>
-
 <!-- ************************************ BANNIERE ****************************************** -->
 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">

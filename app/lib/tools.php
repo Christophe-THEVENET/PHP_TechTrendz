@@ -1,11 +1,5 @@
 <?php
 
-function linesToArray(string $string)
-{
-    return explode(PHP_EOL, $string);
-}
-
-
 function slugify($text, string $divider = '-')
 {
     // replace non letter or digits by divider

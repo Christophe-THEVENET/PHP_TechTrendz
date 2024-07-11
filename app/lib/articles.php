@@ -20,7 +20,7 @@ function getArticleImagePath(string|null $image): string
 
 function getArticles(PDO $pdo, int $limit = null, int $page = null): array|bool
 {
-    $sql = "SELECT * FROM articles JOIN categories ON articles.category_id = categories.id ORDER BY articles.id DESC";
+    $sql = "SELECT articles.*, categories.name AS category_name FROM articles JOIN categories ON articles.category_id = categories.id ORDER BY articles.id DESC";
 
     if ($limit && !$page) {
         $sql .= " LIMIT  :limit";
