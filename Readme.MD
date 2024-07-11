@@ -26,7 +26,7 @@ Application de publication d'articles par catégorie. L'administration du site e
 `docker-compose up -d`
 
 - créer un fichier .env a la racine de l'appli
-- dans le fichier .env ajouter les variables de connexion avec vos identifiants
+- dans le fichier .env ajouter vos identifiants de connexion a la place de xxxxxxxxx
 
 
 $$
