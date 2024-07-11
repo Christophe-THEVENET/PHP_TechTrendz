@@ -54,7 +54,9 @@ PMA_PASSWORD="xxxxxx"
 #### Créer les conteneurs docker
 
 
-`docker-compose up -d`
+```markdown
+docker-compose up -d
+```
 ## Utilisation
 
 url de l'application:
