@@ -24,30 +24,38 @@ $currentPage = basename($_SERVER['SCRIPT_NAME']); // index.php
 </head>
 
 <body>
+    <div class="container container__admin d-flex m-5">
 
-    <div class="container d-flex m-5">
-
-        <header>
+        <header class="admin-header">
             <!-- ------------   sidebar ---------------- -->
-            <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 220px;">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <svg class="bi pe-none me-2" width="40" height="32">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                    <span class="fs-4">Administration</span>
+                    <span class="fs-4 sidebar__title">Administration</span>
                 </a>
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="/app/admin/index.php" class="nav-link <?= basename($_SERVER['SCRIPT_NAME']) === 'index.php' ? 'active' : "" ?>" aria-current="page">
+                        <a href="../../index.php" class="nav-link <?= basename($_SERVER['SCRIPT_NAME']) === 'index.php' ? 'active' : "" ?>" aria-current="page">
                             <i class="bi bi-house me-2"></i>
-                            Acceuil
+                            Acceuil site
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/app/admin/admin.php" class="nav-link <?= basename($_SERVER['SCRIPT_NAME']) === 'admin.php' ? 'active' : "" ?>" aria-current="page">
+                            <i class="bi bi-gear-wide me-2"></i>
+                            Acceuil admin
                         </a>
                     </li>
                     <li>
-                        <a href="/app/admin/articles.php" class="nav-link text-white  <?= basename($_SERVER['SCRIPT_NAME']) === 'articles.php' ? 'active' : "" ?>">
+                        <a href="/app/admin/articles.php" class="nav-link  <?= basename($_SERVER['SCRIPT_NAME']) === 'articles.php' ? 'active' : "" ?>">
                             <i class="bi-table bi pe-none me-2"></i>
                             Articles
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/app/admin/article.php" class="nav-link  <?= basename($_SERVER['SCRIPT_NAME']) === 'article.php' ? 'active' : "" ?>">
+                            <i class="bi bi-plus-square-fill pe-none me-2"></i>
+                            Ajouter un article
                         </a>
                     </li>
                 </ul>

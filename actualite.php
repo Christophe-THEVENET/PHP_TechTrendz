@@ -5,14 +5,15 @@ require_once __DIR__ . "/app/lib/pdo.php";
 require_once __DIR__ . "/app/lib/articles.php";
 
 $error = false;
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     $article = getArticleById($pdo, $id);
 
-
     require_once __DIR__ . "/app/lib/menu.php";
 
+    // metadonnées dynamique exclues de la nav
     if ($article) {
         $mainMenu['actualite.php'] = [
             'title' => $article['title'],
@@ -44,6 +45,5 @@ require_once __DIR__ . "/app/templates/header.php";
 <?php } else { ?>
     <h1>Article introuvable</h1>
 <?php } ?>
-
 
 <?php require_once __DIR__ . "/app/templates/footer.php"; ?>

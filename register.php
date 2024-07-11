@@ -39,22 +39,25 @@ if (isset($_POST["registerUser"])) {
             if ($user["role"] === "user") {
                 header("location: index.php");
             } elseif ($user["role"] === "admin") {
-                header("location: /app/admin/index.php");
+                header("location: /app/admin/admin.php");
             }
         } else {
             $errors[] = "Email ou mot de passe incorrect";
         }
-
     } catch (Exception $error) {
         $errors[] = "Impossible de s'enregistrer" . $error->getMessage();
     }
-} else {
-    $errors[] = "Une erreure est survenue: veuillez réesayer.";
-}
+} 
 
 ?>
 
 <h1>Inscription</h1>
+
+<?php foreach ($errors as $error) { ?>
+    <div class="alert alert-danger">
+        <?= $error; ?>
+    </div>
+<?php } ?>
 
 <form method="post">
     <div class="mb-3">

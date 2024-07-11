@@ -1,6 +1,6 @@
 :root {
     --primary: #3193cc;
-    --secondary: #81DD90;
+    --secondary: #81dd90;
     --success: #28a745;
     --danger: #dc3545;
     --warning: #fd7e14;
@@ -12,14 +12,37 @@
     --bs-link-hover-color: var(--secondary);
 }
 
-  .btn-primary {
+body {
+    background-color: rgba(232, 237, 241, 0.578);
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container__admin {
+    flex-direction: row;
+    min-height: 85vh;
+    align-items: flex-start;
+}
+
+
+
+.btn-primary {
     --bs-btn-color: #fff;
     --bs-btn-bg: var(--primary);
     --bs-btn-border-color: var(--primary);
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #ffc697;
     --bs-btn-hover-border-color: var(--secondary);
-    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-color: #fff;
     --bs-btn-active-bg: #17a2b8;
     --bs-btn-active-border-color: var(--secondary);
@@ -35,7 +58,7 @@
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: var(--secondary);
     --bs-btn-hover-border-color: var(--primary);
-    --bs-btn-focus-shadow-rgb: 13,110,253;
+    --bs-btn-focus-shadow-rgb: 13, 110, 253;
     --bs-btn-active-color: #fff;
     --bs-btn-active-bg: var(--primary);
     --bs-btn-active-border-color: var(--primary);
@@ -52,11 +75,17 @@
     --bs-nav-pills-link-active-bg: var(--primary);
 }
 
-h1 {
-  color: var(--primary);
+.active > .page-link,
+.page-link.active {
+    background-color: #558db8;
 }
 
-h2, h3 {
+h1 {
+    color: var(--primary);
+}
+
+h2,
+h3 {
     color: var(--secondary);
 }
 
@@ -66,4 +95,65 @@ h2, h3 {
     object-fit: cover;
 }
 
+.container main {
+    flex: 2;
+    margin-left: 10px;
+}
 
+.container main table,
+.container main table td,
+.container main table th {
+    background-color: #e7edf099;
+    color: #0e4a78;
+}
+
+.container main table .logo-article {
+display: flex;
+justify-content: space-around;
+max-width: 80px;
+}
+
+.container main table tbody tr td:hover {
+    background-color: #fbfbfb38;
+    color: #1e527a;
+}
+
+.admin-header  {
+    align-self: stretch;
+}
+
+.admin-header > div {
+    height: 50%;
+    background-color: rgb(19, 50, 75)!important;
+
+}
+
+.sidebar__title {
+    width: 100%;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+header .name-block {
+    margin-bottom: 0px;
+    margin-right: 5px;
+}
+
+header .log-block {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+    header .log-block {
+        flex: 2;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .log-block a {
+        margin: 0.2rem;
+    }
+}

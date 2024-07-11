@@ -20,7 +20,7 @@ if (isset($_POST["loginUser"])) {
         if ($user["role"] === "user") {
             header("location: index.php");
         } elseif ($user["role"] === "admin") {
-            header("location: /app/admin/index.php");
+            header("location: /app/admin/admin.php");
         }
     } else {
         $errors[] = "Email ou mot de passe incorrect";
